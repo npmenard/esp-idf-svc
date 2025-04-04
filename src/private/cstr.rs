@@ -115,7 +115,7 @@ pub fn cstr_from_str_truncating<'a>(rust_str: &str, buf: &'a mut [u8]) -> &'a CS
 pub fn cstr_arr_from_str_slice<const N: usize>(
     rust_strs: &[&str],
     mut cbuf: &mut [u8],
-) -> Result<[*const i8; N], EspError> {
+) -> Result<[*const u8; N], EspError> {
     assert!(N > 1);
     assert!(!cbuf.is_empty());
 
